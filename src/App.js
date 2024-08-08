@@ -62,7 +62,7 @@ function App() {
           <button >Generate</button>
         </form>
       </div>
-      <div className = "formEditor">
+      <div className = "formEditorDiv">
         {schema !== "{}" &&
         <div>
           <Form
@@ -79,7 +79,7 @@ function App() {
             templates={{ ButtonTemplates: { SubmitButton } }}
           />
           <div>
-          <br/>
+          <br/><br/><br/>
           <h3>JSON Object</h3>
           <Card>
             <JsonView src={jsonData} />
