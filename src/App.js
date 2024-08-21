@@ -16,7 +16,9 @@ function App() {
   const [jsonData, setJsonData] = useState('')
 
 
-  const onChange = ({ formData }) => setJsonData(JSON.parse(JSON.stringify(formData)));
+  const onChange = ({ formData }) => {if(formData !== undefined){setJsonData(JSON.parse(JSON.stringify(formData)))}}
+  const onSubmit = ({ formData }) => alert("Data is valid.");
+
   const formRef = createRef();
 
   async function handleSubmit(e) {
@@ -73,7 +75,7 @@ function App() {
               arrayMinItems: { populate: 'requiredOnly' },
             }}
             onChange={onChange}
-            onSubmit={log('submit')}
+            onSubmit={onSubmit}
             onError={log('errors')}
             ref={formRef}
             templates={{ ButtonTemplates: { SubmitButton } }}
